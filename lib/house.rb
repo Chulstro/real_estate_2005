@@ -50,4 +50,29 @@ class House
     }
     detail
   end
+
+  def price_per_square_foot
+    sqft_price = @price.to_f / self.area.to_f
+    sqft_price.round(2)
+  end
+
+  # def rooms_sorted_by_area
+  #   sorted_rooms =[]
+  #   @rooms.each do |room|
+  #     room = room
+  #     binding.pry
+  #     if sorted_rooms = []
+  #       sorted_rooms << room
+  #     elsif room.area > sorted_rooms[0].area
+  #       sorted_rooms.insert(0,room)
+  #     elsif room.area < sorted_rooms[0].area
+  #       sorted_rooms.insert(1, room)
+  #     elsif room.area > sorted_rooms[2].area
+  #       sorted_rooms.insert(2, room)
+  #     elsif room.area > sorted_rooms[3].area
+  #       sorted_rooms.insert(3, room)
+  #     end
+  #   end
+  #   sorted_rooms
+  # end
 end
