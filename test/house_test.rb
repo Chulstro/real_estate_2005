@@ -18,7 +18,7 @@ class HouseTest < Minitest::Test
   end
 
   def test_its_initial_values
-    assert_equal "$400000", @house.price
+    assert_equal 400000, @house.price
     assert_equal "123 sugar lane", @house.address
     assert_equal [], @house.rooms
   end
@@ -56,5 +56,9 @@ class HouseTest < Minitest::Test
     @house.add_room(@room_4)
 
     assert_equal 1900, @house.area
+  end
+
+  def test_house_details_hash
+    assert_equal ["price" => 400000, "address" => "123 sugar lane"], [@house.details]
   end
 end

@@ -7,7 +7,7 @@ class House
               :rooms
 
   def initialize(cost, address)
-    @price = cost
+    @price = cost.delete("$").to_i
     @address = address
     @rooms = []
   end
@@ -17,7 +17,7 @@ class House
   end
 
   def above_market_average?
-    if @price.to_i >= 500000
+    if @price >= 500000
       true
     else
       false
@@ -41,5 +41,13 @@ class House
       area += room.area
     end
     area
+  end
+
+  def details
+    detail = {
+      "price" => @price,
+      "address" => @address
+    }
+    detail
   end
 end
